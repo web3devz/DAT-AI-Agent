@@ -4,7 +4,7 @@ A blockchain-powered AI agent system that uses Data Anchoring Tokens (DAT) for s
 
 ## Overview
 
-This project implements a sophisticated AI agent with blockchain-based access control using DAT (Data Anchoring Token) - a semi-fungible token standard that encodes ownership certificates, usage rights, and value sharing for AI datasets and models. The system provides tiered access to AI services with automatic billing and revenue distribution.
+This project implements a sophisticated AI agent with blockchain-based access control using DAT (Data Anchoring Token) — a semi-fungible token standard that encodes ownership certificates, usage rights, and value sharing for AI datasets and models. The system provides tiered access to AI services with automatic billing and revenue distribution.
 
 ## Features
 
@@ -43,30 +43,33 @@ This project implements a sophisticated AI agent with blockchain-based access co
 ### Installation
 
 1. **Clone and install dependencies**:
-\`\`\`bash
-git clone <repository-url>
-cd subscription-ai-agent
-npm install
-\`\`\`
+   ```bash
+   git clone <repository-url>
+   cd subscription-ai-agent
+   npm install
+
 
 2. **Configure environment variables**:
-\`\`\`bash
-# Add to your Vercel project or .env.local
-NEXT_PUBLIC_DAT_CONTRACT_ADDRESS=0x...  # Your deployed DAT contract address
-\`\`\`
+
+   ```bash
+   # Add to your Vercel project or .env.local
+   NEXT_PUBLIC_DAT_CONTRACT_ADDRESS=0x...  # Your deployed DAT contract address
+   ```
 
 3. **Deploy smart contracts** (optional - for development):
-\`\`\`bash
-# Deploy the DataAnchoringToken contract to your preferred network
-# Update NEXT_PUBLIC_DAT_CONTRACT_ADDRESS with the deployed address
-\`\`\`
+
+   ```bash
+   # Deploy the DataAnchoringToken contract to your preferred network
+   # Update NEXT_PUBLIC_DAT_CONTRACT_ADDRESS with the deployed address
+   ```
 
 4. **Start development server**:
-\`\`\`bash
-npm run dev
-\`\`\`
 
-Visit `http://localhost:3000` to see the application.
+   ```bash
+   npm run dev
+   ```
+
+Visit [http://localhost:3000](http://localhost:3000) to see the application.
 
 ## Usage
 
@@ -80,7 +83,8 @@ Visit `http://localhost:3000` to see the application.
 ### For Developers
 
 #### Smart Contract Integration
-\`\`\`typescript
+
+```typescript
 import { DATContract } from '@/lib/contracts';
 
 // Check user subscription
@@ -88,45 +92,50 @@ const subscription = await DATContract.getSubscription(userAddress);
 
 // Mint new subscription
 await DATContract.mintSubscription(tier, duration, { value: price });
-\`\`\`
+```
 
 #### AI Agent Usage
-\`\`\`typescript
+
+```typescript
 import { AIAgent } from '@/lib/ai-agent';
 
 const agent = new AIAgent(provider);
 const response = await agent.query(userAddress, "Your question here");
-\`\`\`
+```
 
 ## Architecture
 
 ### Smart Contracts
-- **DataAnchoringToken.sol**: Main DAT contract implementing ERC-1155 with subscription logic
-- **Access Control**: Tier-based permissions and usage tracking
-- **Revenue Sharing**: Automatic distribution among contributors
+
+* **DataAnchoringToken.sol**: Main DAT contract implementing ERC-1155 with subscription logic
+* **Access Control**: Tier-based permissions and usage tracking
+* **Revenue Sharing**: Automatic distribution among contributors
 
 ### Backend Services
-- **AI Agent**: Core AI processing with access control
-- **Billing System**: Usage tracking and subscription management
-- **Security Layer**: ZKP verification and TEE processing simulation
+
+* **AI Agent**: Core AI processing with access control
+* **Billing System**: Usage tracking and subscription management
+* **Security Layer**: ZKP verification and TEE processing simulation
 
 ### Frontend Components
-- **Wallet Integration**: Multi-wallet support with React hooks
-- **Dashboard**: Real-time analytics and subscription management
-- **AI Interface**: Chat-like interface for AI interactions
+
+* **Wallet Integration**: Multi-wallet support with React hooks
+* **Dashboard**: Real-time analytics and subscription management
+* **AI Interface**: Chat-like interface for AI interactions
 
 ## Subscription Tiers
 
-| Tier | Price | Queries/Day | Features |
-|------|-------|-------------|----------|
-| **Basic** | 0.01 ETH | 10 | Standard responses, basic support |
-| **Premium** | 0.05 ETH | 100 | Enhanced responses, priority support, analytics |
-| **Enterprise** | 0.1 ETH | 1000 | Premium responses, dedicated support, advanced analytics |
+| Tier           | Price    | Queries/Day | Features                                                 |
+| -------------- | -------- | ----------- | -------------------------------------------------------- |
+| **Basic**      | 0.01 ETH | 10          | Standard responses, basic support                        |
+| **Premium**    | 0.05 ETH | 100         | Enhanced responses, priority support, analytics          |
+| **Enterprise** | 0.1 ETH  | 1000        | Premium responses, dedicated support, advanced analytics |
 
 ## Development
 
 ### Project Structure
-\`\`\`
+
+```
 ├── contracts/              # Smart contracts
 │   └── DataAnchoringToken.sol
 ├── lib/                    # Core utilities
@@ -142,13 +151,14 @@ const response = await agent.query(userAddress, "Your question here");
 │   └── use-wallet.ts
 └── app/                   # Next.js app router
     └── page.tsx           # Main application
-\`\`\`
+```
 
 ### Key Technologies
-- **Frontend**: Next.js 14, React, Tailwind CSS, TypeScript
-- **Blockchain**: Ethers.js, ERC-1155 (DAT tokens)
-- **Charts**: Recharts for analytics visualization
-- **Wallet**: Multi-wallet support with automatic detection
+
+* **Frontend**: Next.js 14, React, Tailwind CSS, TypeScript
+* **Blockchain**: Ethers.js, ERC-1155 (DAT tokens)
+* **Charts**: Recharts for analytics visualization
+* **Wallet**: Multi-wallet support with automatic detection
 
 ## Contributing
 
@@ -160,31 +170,17 @@ const response = await agent.query(userAddress, "Your question here");
 
 ## Security Considerations
 
-- **Smart Contract Auditing**: Ensure contracts are audited before mainnet deployment
-- **Private Key Management**: Never expose private keys in client-side code
-- **Rate Limiting**: Implement proper rate limiting to prevent abuse
-- **Input Validation**: Validate all user inputs and AI queries
-
-## Roadmap
-
-- [ ] Integration with actual LazAI and DuckChain SDKs
-- [ ] Advanced ZKP implementation for privacy
-- [ ] Multi-chain support (Polygon, BSC, etc.)
-- [ ] AI model marketplace integration
-- [ ] Advanced analytics and reporting
-- [ ] Mobile app development
+* **Smart Contract Auditing**: Ensure contracts are audited before mainnet deployment
+* **Private Key Management**: Never expose private keys in client-side code
+* **Rate Limiting**: Implement proper rate limiting to prevent abuse
+* **Input Validation**: Validate all user inputs and AI queries
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
 
 ## Support
 
 For support and questions:
-- Create an issue in this repository
-- Join our Discord community
-- Email: support@dat-ai-agent.com
 
----
-
-Built with ❤️ using Next.js, Ethereum, and AI technologies.
+* Create an issue in this repository

@@ -61,7 +61,7 @@ export class AIAgent {
 
   private isValidProvider(provider: ethers.Provider): boolean {
     try {
-      // Check if provider has the necessary methods for contract calls
+      // Check if provider has the necessary mTONods for contract calls
       return typeof provider.call === "function" && typeof provider.getNetwork === "function" && provider !== null
     } catch {
       return false
@@ -254,9 +254,9 @@ export class AIAgent {
 
     const responses = {
       defi: {
-        basic: "Current DeFi opportunities include staking ETH (~4% APY) and providing liquidity on major DEXs.",
+        basic: "Current DeFi opportunities include staking TON (~4% APY) and providing liquidity on major DEXs.",
         premium:
-          "Top DeFi yield strategies: 1) ETH staking on Lido (4.2% APY), 2) Uniswap V3 concentrated liquidity (8-15% APY), 3) Aave lending (3-6% APY). Risk assessment: Medium to high depending on strategy.",
+          "Top DeFi yield strategies: 1) TON staking on Lido (4.2% APY), 2) Uniswap V3 concentrated liquidity (8-15% APY), 3) Aave lending (3-6% APY). Risk assessment: Medium to high depending on strategy.",
         enterprise:
           "Comprehensive DeFi analysis: 1) Liquid staking derivatives (Lido, Rocket Pool) offering 4-5% with high liquidity, 2) Concentrated liquidity positions on Uniswap V3 with dynamic rebalancing (potential 10-20% APY), 3) Yield farming on Curve with CRV rewards (6-12% APY), 4) Leveraged strategies using Aave/Compound (15-30% APY, high risk). Include impermanent loss calculations and gas optimization strategies.",
       },
@@ -297,7 +297,7 @@ export class AIAgent {
   }
 
   private generateSources(category: string, accessLevel: string): string[] {
-    const baseSources = ["DeFiPulse", "CoinGecko", "Etherscan"]
+    const baseSources = ["DeFiPulse", "CoinGecko", "TONerscan"]
     const premiumSources = [...baseSources, "Messari", "Dune Analytics", "DefiLlama"]
     const enterpriseSources = [...premiumSources, "Chainalysis", "Nansen", "IntoTheBlock"]
 

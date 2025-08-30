@@ -38,14 +38,14 @@ This project implements a sophisticated AI agent with blockchain-based access co
 ### Prerequisites
 - Node.js 18+ and npm/yarn
 - MetaMask or compatible Web3 wallet
-- Access to Ethereum testnet (Sepolia recommended)
+- Access to Duck Mainnet(Sepolia recommended)
 
 ### Installation
 
 1. **Clone and install dependencies**:
    ```bash
-   git clone <repository-url>
-   cd subscription-ai-agent
+   git clone https://github.com/web3devz/DAT-AI-Agent.git
+   cd DAT-AI-Agent
    npm install
 
 
@@ -127,9 +127,9 @@ const response = await agent.query(userAddress, "Your question here");
 
 | Tier           | Price    | Queries/Day | Features                                                 |
 | -------------- | -------- | ----------- | -------------------------------------------------------- |
-| **Basic**      | 0.01 ETH | 10          | Standard responses, basic support                        |
-| **Premium**    | 0.05 ETH | 100         | Enhanced responses, priority support, analytics          |
-| **Enterprise** | 0.1 ETH  | 1000        | Premium responses, dedicated support, advanced analytics |
+| **Basic**      | 0.01 TON | 10          | Standard responses, basic support                        |
+| **Premium**    | 0.05 TON | 100         | Enhanced responses, priority support, analytics          |
+| **Enterprise** | 0.1 TON  | 1000        | Premium responses, dedicated support, advanced analytics |
 
 ## Development
 

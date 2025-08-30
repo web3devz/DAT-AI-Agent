@@ -228,7 +228,7 @@ export default function HomePage() {
                                     <Badge variant="outline">{tier.quota} queries</Badge>
                                   </div>
                                   <div className="flex items-center justify-between">
-                                    <span className="text-2xl font-bold text-blue-600">{tier.price} ETH</span>
+                                    <span className="text-2xl font-bold text-blue-600">{tier.price} TON</span>
                                     <Button
                                       onClick={() => mintDAT(tier.id, tier.price)}
                                       disabled={isLoading || !isValidNetwork}

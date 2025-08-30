@@ -131,7 +131,7 @@ export function WalletConnector() {
           <div className="flex items-center justify-between">
             <span className="text-sm text-muted-foreground">Balance:</span>
             <div className="flex items-center gap-2">
-              <span className="font-medium">{formatBalance(balance)} ETH</span>
+              <span className="font-medium">{formatBalance(balance)} TON</span>
               <Button variant="ghost" size="sm" onClick={refreshBalance} className="h-6 w-6 p-0">
                 <RefreshCw className="h-3 w-3" />
               </Button>
